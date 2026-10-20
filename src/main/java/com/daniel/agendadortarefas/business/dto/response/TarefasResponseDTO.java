@@ -1,4 +1,4 @@
-package com.daniel.agendadortarefas.business.dto;
+package com.daniel.agendadortarefas.business.dto.response;
 
 
 import com.daniel.agendadortarefas.infrastructure.enums.Status;
@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class TarefasDTO {
+public class TarefasResponseDTO {
+
     private String id;
     private String nomeTarefa;
     private String descricao;
@@ -24,5 +25,4 @@ public class TarefasDTO {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime dataAlteracao;
     private Status status;
-
 }
