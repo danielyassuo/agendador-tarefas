@@ -1,7 +1,8 @@
 package com.daniel.agendadortarefas.business.mapper;
 
 
-import com.daniel.agendadortarefas.business.dto.TarefasDTO;
+import com.daniel.agendadortarefas.business.dto.request.TarefasRequestDTO;
+import com.daniel.agendadortarefas.business.dto.response.TarefasResponseDTO;
 import com.daniel.agendadortarefas.infrastructure.entity.TarefasEntity;
 import org.mapstruct.Mapper;
 
@@ -9,13 +10,13 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface TarefasConverter {
-    TarefasEntity paraTarefaEntity(TarefasDTO tarefasDTO);
+    TarefasEntity paraTarefaEntity(TarefasRequestDTO tarefasDTO);
 
-    TarefasDTO paraTarefaDTO(TarefasEntity tarefasEntity);
+    TarefasResponseDTO paraTarefaDTO(TarefasEntity tarefasEntity);
 
-    List<TarefasEntity> paraListaTarefasEntity(List<TarefasDTO> tarefasDTOS);
+    List<TarefasEntity> paraListaTarefasEntity(List<TarefasRequestDTO> tarefasDTOS);
 
-    List<TarefasDTO> paraListaTarefasDTO(List<TarefasEntity> tarefasEntity);
+    List<TarefasResponseDTO> paraListaTarefasDTO(List<TarefasEntity> tarefasEntity);
 
 
 }

@@ -3,7 +3,7 @@ package com.daniel.agendadortarefas.infrastructure.security;
 
 
 
-import com.daniel.agendadortarefas.business.dto.UsuarioDTO;
+import com.daniel.agendadortarefas.business.dto.response.UsuarioResponseDTO;
 import com.daniel.agendadortarefas.infrastructure.security.client.UsuarioClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -19,7 +19,7 @@ public class UserDetailsServiceImpl  {
 
     public UserDetails carregaDadosUsuario(String email , String token){
 
-        UsuarioDTO usuarioDTO = client.buscarUsuarioPorEmail(email, token);
+        UsuarioResponseDTO usuarioDTO = client.buscarUsuarioPorEmail(email, token);
 
         return User.withUsername(usuarioDTO.getEmail()).password(usuarioDTO.getSenha()).build();
     }

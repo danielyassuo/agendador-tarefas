@@ -1,18 +1,17 @@
-package com.daniel.agendadortarefas.business.dto;
+package com.daniel.agendadortarefas.business.dto.request;
 
 
 import lombok.*;
 
-import java.util.List;
-
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@EqualsAndHashCode
+@ToString
+public class UsuarioRequestDTO {
 
-public class UsuarioDTO {
     private String email;
     private String senha;
-
 }
