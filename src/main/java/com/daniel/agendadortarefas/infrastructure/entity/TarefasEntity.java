@@ -19,6 +19,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@EqualsAndHashCode
+@ToString
 public class TarefasEntity {
     @Id
     private String id;
