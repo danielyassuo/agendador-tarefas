@@ -49,11 +49,10 @@ public class TarefasService {
 
     public void deletaTarefaPorId(String id){
 
-        try{
-            tarefasRepository.deleteById(id);
-        }catch (ResourcesNotFoundException e){
-            throw new ResourcesNotFoundException("Erro ao deletar tarefa, ID não existente " + id,  e.getCause());
+        if(!tarefasRepository.existsById(id)){
+            throw new ResourcesNotFoundException("Erro ao deletar tarefa, ID não encontrado");
         }
+        tarefasRepository.deleteById(id);
 
     }
 
